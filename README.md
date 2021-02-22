@@ -1,22 +1,23 @@
-# Full Cycle 2.0 Desafio Go
+# Full Cycle 2.0 Desafio Nginx com Node.js
 
-## Image
+## Clonar projeto
 
-`docker pull rodrigogsilva/codeeducation:latest`
+```bash
+# ssh
+git clone -b nginx-node git@github.com:rodrigogsilva/desafios-full-cycle.git
 
-[docker image page](https://hub.docker.com/r/rodrigogsilva/codeeducation)
+# https
+git clone -b nginx-node https://github.com/rodrigogsilva/desafios-full-cycle.git
+```
 
-## Desafio
+Nesse desafio você colocará em prática o que aprendemos em relação a utilização do nginx como proxy reverso. A idéia principal é que quando um usuário acesse o nginx, o mesmo fará uma chamada em nossa aplicação node.js. Essa aplicação por sua vez adicionará um registro em nosso banco de dados mysql, cadastrando um nome na tabela people.
 
-Esse desafio é muito empolgante principalmente se você nunca trabalhou com a linguagem Go!
-Você terá que publicar uma imagem no docker hub. Quando executarmos:
+O retorno da aplicação node.js para o nginx deverá ser:
 
-docker run <seu-user>/codeeducation
+- <h1>Full Cycle Rocks!</h1>
 
-Temos que ter o seguinte resultado: Code.education Rocks!
+- Lista de nomes cadastrada no banco de dados.
 
-Se você perceber, essa imagem apenas realiza um print da mensagem como resultado final, logo, vale a pena dar uma conferida no próprio site da Go Lang para aprender como fazer um "olá mundo".
+Gere o docker-compose de uma forma que basta apenas rodarmos: `docker-compose up -d` que tudo deverá estar funcionando e disponível na porta: 8080.
 
-Lembrando que a Go Lang possui imagens oficiais prontas, vale a pena consultar o Docker Hub.
-
-3. A imagem de nosso projeto Go precisa ter menos de 2MB =)
+Suba tudo em um repositório e faça a entrega.
